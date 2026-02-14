@@ -8,4 +8,4 @@ Detta är min personliga portfölj byggd med HTML, CSS och JavaScript.
 - `/assets`: Bilder och PDF-dokument (CV)
 
 ## Visa sidan
-Besök den live på: [Din GitHub Pages URL här]
+Besök den live på: (https://williamellings.github.io/)
