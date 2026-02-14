@@ -1,28 +1,48 @@
+document.addEventListener('DOMContentLoaded', () => {
+    
+    // --- TERMINAL TOGGLE ---
+    const toggleBtn = document.getElementById('terminal-toggle');
+    const body = document.body;
 
-// Smooth scroll för navigationslänkar
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-        });
-    });
-});
-
-// Enkel fade-in effekt för projektkort vid scroll
-const observerOptions = { threshold: 0.1 };
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
+    toggleBtn.addEventListener('click', () => {
+        body.classList.toggle('terminal-mode');
+        
+        if (body.classList.contains('terminal-mode')) {
+            toggleBtn.innerText = 'Type: ModernUI';
+            console.log("> System scan complete. Root access granted.");
+        } else {
+            toggleBtn.innerText = 'Type: Terminal';
         }
     });
-}, observerOptions);
 
-document.querySelectorAll('.project-card, .skill-card').forEach(el => {
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(20px)';
-    el.style.transition = 'all 0.6s ease-out';
-    observer.observe(el);
+    // --- SCROLL REVEAL ANIMATION ---
+    const observerOptions = {
+        threshold: 0.15
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('reveal-visible');
+            }
+        });
+    }, observerOptions);
+
+    // Lägg till en enkel animation på korten
+    document.querySelectorAll('.skill-card, .project-card').forEach(el => {
+        el.style.opacity = "0";
+        el.style.transform = "translateY(30px)";
+        el.style.transition = "all 0.8s ease-out";
+        observer.observe(el);
+    });
 });
+
+// Callback för observer för att faktiskt visa elementen
+const style = document.createElement('style');
+style.innerHTML = `
+    .reveal-visible {
+        opacity: 1 !important;
+        transform: translateY(0) !important;
+    }
+`;
+document.head.appendChild(style);
