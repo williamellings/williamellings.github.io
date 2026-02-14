@@ -127,7 +127,7 @@ body.terminal-mode {
     background-color: #050505 !important;
     color: var(--terminal-green) !important;
     font-family: 'Courier New', monospace !important;
-    text-shadow: 0 0 5px var(--terminal-green);
+    text-shadow: 0 0 5px var(--terminal-green); 
 }
 
 body.terminal-mode h1, 
