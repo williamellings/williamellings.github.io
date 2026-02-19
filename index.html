@@ -11,7 +11,7 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://williamellings.github.io/">
     <meta property="og:title" content="William Ellingsworth | .NET & Cloud Engineer">
-    <meta property="og:description" content="Specialist på Clean Architecture, .NET Core och skalbara molnlösningar.">
+    <meta property="og:description" content="Backend-first Fullstack Engineer specializing in Clean Architecture, .NET Core, and scalable cloud solutions.">
     <meta property="og:image" content="https://williamellings.github.io/assets/images/preview-image.png">
 
     <script type="module">
@@ -30,7 +30,7 @@
                 <li><a href="#projects">Work</a></li>
                 <li><a href="#roadmap">AI & Cloud</a></li>
             </ul>
-            <button id="terminal-toggle" class="terminal-btn">_Run_Terminal</button>
+            <button id="terminal-toggle" class="terminal-btn" aria-label="Toggle terminal mode">_Run_Terminal</button>
         </div>
     </nav>
 
@@ -138,10 +138,11 @@
         <div class="container text-center">
             <h3>System Status: Available for Hire</h3>
             <p>Let's connect and build something stable.</p>
+
             <div class="contact-methods">
                 <div class="copy-email-container">
                     <span id="email-text">wille.ellings@hotmail.com</span>
-                    <button onclick="copyEmail()" class="copy-btn" title="Copy to clipboard">
+                    <button id="copy-email-btn" class="copy-btn" title="Copy to clipboard" aria-label="Copy email address">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                             <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z" />
                             <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3z" />
@@ -150,10 +151,12 @@
                     <span id="copy-toast">Copied!</span>
                 </div>
             </div>
+
             <div class="social-links">
                 <a href="https://github.com/williamellings" target="_blank">GitHub</a>
                 <a href="https://www.linkedin.com/in/william-ellingsworth-1abb59380/" target="_blank">LinkedIn</a>
             </div>
+
             <p class="copyright">&copy; 2026 William Ellingsworth | Engineered for Performance</p>
         </div>
     </footer>

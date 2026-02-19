@@ -360,46 +360,92 @@ footer .social-links {
     opacity: 0.4;
 }
 
-body.terminal-mode .project-card *,
-body.terminal-mode .skill-card *,
-body.terminal-mode .roadmap-item * {
+body.terminal-mode {
+    background-color: #0d0d0d !important;
     color: var(--terminal-green) !important;
+    font-family: var(--mono-font) !important;
 }
 
-body.terminal-mode .skill-card,
-body.terminal-mode .project-card,
-body.terminal-mode .roadmap-item {
-    background: #000 !important;
-    box-shadow: none !important;
-}
+    /* Global text glow and border overrides */
+    body.terminal-mode * {
+        text-shadow: 0 0 2px rgba(74, 222, 128, 0.4) !important;
+        border-color: var(--terminal-green) !important;
+    }
 
-body.terminal-mode .badge {
-    border-color: var(--terminal-green) !important;
-    background: transparent !important;
-}
+    body.terminal-mode h1, body.terminal-mode h2, body.terminal-mode h3,
+    body.terminal-mode h4, body.terminal-mode p, body.terminal-mode a {
+        color: var(--terminal-green) !important;
+    }
 
-body.terminal-mode::before {
-    content: " ";
-    display: block;
-    position: fixed;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.1) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.03), rgba(0, 255, 0, 0.01), rgba(0, 0, 118, 0.03));
-    z-index: 9999;
-    background-size: 100% 3px, 3px 100%;
-    pointer-events: none;
-    opacity: 1;
-}
+    body.terminal-mode h2, body.terminal-mode h3 {
+        text-shadow: 0 0 8px rgba(74, 222, 128, 0.6) !important;
+    }
 
-body.terminal-mode h2, body.terminal-mode h3 {
-    text-shadow: 0 0 8px rgba(74, 222, 128, 0.6) !important;
-}
+    /* Layout and Container Backgrounds */
+    body.terminal-mode nav {
+        background: #000 !important;
+    }
+
+    body.terminal-mode section,
+    body.terminal-mode .bg-light,
+    body.terminal-mode header,
+    body.terminal-mode footer,
+    body.terminal-mode .border-y {
+        background-color: #0d0d0d !important;
+        background: #0d0d0d !important;
+        border-color: var(--terminal-green) !important;
+    }
+
+    /* Cards and Grid Items */
+    body.terminal-mode .skill-card,
+    body.terminal-mode .project-card,
+    body.terminal-mode .roadmap-item {
+        background: #000 !important;
+        box-shadow: none !important;
+    }
+
+        body.terminal-mode .project-card *,
+        body.terminal-mode .skill-card *,
+        body.terminal-mode .roadmap-item * {
+            color: var(--terminal-green) !important;
+        }
+
+    body.terminal-mode .badge {
+        border-color: var(--terminal-green) !important;
+        background: transparent !important;
+    }
+
+    /* Buttons and Interactions */
+    body.terminal-mode .btn,
+    body.terminal-mode .terminal-btn {
+        background: transparent !important;
+        color: var(--terminal-green) !important;
+    }
+
+        body.terminal-mode .btn.link-btn:hover {
+            color: var(--terminal-green) !important;
+        }
+
+    /* Scanline Effect Overlay */
+    body.terminal-mode::before {
+        content: " ";
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.1) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.03), rgba(0, 255, 0, 0.01), rgba(0, 0, 118, 0.03));
+        z-index: 9999;
+        background-size: 100% 3px, 3px 100%;
+        pointer-events: none;
+        opacity: 1;
+    }
 
 .copy-email-container {
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     background: rgba(255,255,255,0.05);
     padding: 0.5rem 1rem;
     border-radius: 6px;
@@ -429,51 +475,6 @@ body.terminal-mode h2, body.terminal-mode h3 {
     display: none;
 }
 
-body.terminal-mode {
-    background-color: #0d0d0d !important;
-    color: var(--terminal-green) !important;
-    font-family: var(--mono-font) !important;
-}
-
-    body.terminal-mode * {
-        text-shadow: 0 0 2px rgba(74, 222, 128, 0.4) !important;
-        border-color: var(--terminal-green) !important;
-    }
-
-    body.terminal-mode h1, body.terminal-mode h2, body.terminal-mode h3,
-    body.terminal-mode h4, body.terminal-mode p, body.terminal-mode a {
-        color: var(--terminal-green) !important;
-    }
-
-    body.terminal-mode nav {
-        background: #000 !important;
-    }
-
-    body.terminal-mode .skill-card,
-    body.terminal-mode .project-card,
-    body.terminal-mode .roadmap-item {
-        background: #000 !important;
-        box-shadow: none !important;
-    }
-
-    body.terminal-mode .btn, body.terminal-mode .terminal-btn {
-        background: transparent !important;
-        color: var(--terminal-green) !important;
-    }
-
-    body.terminal-mode section,
-    body.terminal-mode .bg-light,
-    body.terminal-mode header,
-    body.terminal-mode footer,
-    body.terminal-mode .border-y {
-        background-color: #0d0d0d !important;
-        background: #0d0d0d !important;
-        border-color: var(--terminal-green) !important;
-    }
-
-    body.terminal-mode .btn.link-btn:hover {
-        color: var(--terminal-green) !important;
-    }
 
 @media (max-width: 768px) {
     h2 {
