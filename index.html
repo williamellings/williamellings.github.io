@@ -1,58 +1,84 @@
 <!DOCTYPE html>
-<html lang="sv">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>William Ellingsworth | Backend Developer</title>
+    <title>William Ellingsworth | Backend-First Fullstack Engineer</title>
     <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body>
 
     <nav>
-    <div class="container">
-        <h1 class="logo">WE<span>.</span></h1>
-        <ul>
-            <li><a href="#about">Om</a></li>
-            <li><a href="#skills">Färdigheter</a></li>
-            <li><a href="#projects">Projekt</a></li>
-        </ul>
-        <button id="terminal-toggle" class="terminal-btn">Type: Terminal</button>
-    </div>
-</nav>
+        <div class="container">
+            <h1 class="logo">WE<span>.</span></h1>
+            <ul>
+                <li><a href="#about">System</a></li>
+                <li><a href="#skills">Stack</a></li>
+                <li><a href="#projects">Work</a></li>
+                <li><a href="#roadmap">AI & Cloud</a></li>
+            </ul>
+            <button id="terminal-toggle" class="terminal-btn">_Run_Terminal</button>
+        </div>
+    </nav>
 
     <header id="about">
         <div class="container hero">
             <div class="hero-text">
-                <h2>William Ellingsworth</h2>
-                <p class="tagline">Backend Developer – Cloud Focus</p>
+                <h2 class="fade-in">William Ellingsworth</h2>
+                <p class="tagline">Junior Fullstack Developer | .NET & Cloud Systems</p>
                 <p class="bio">
-                    Ambitiös utvecklare med fokus på .NET-ekosystemet och molnimplementeringar. 
-                    Med erfarenhet från logistikbranschen bygger jag stabila system med fokus på effektiva flöden och ren arkitektur.
+                    I build <strong>stable systems</strong>, maintainable <strong>Clean Architecture</strong>, and <strong>efficient data flows</strong>.
+                    Coming from a background in logistics, I approach software through the lens of optimization—transforming complex requirements into scalable backend solutions.
                 </p>
                 <div class="cta-buttons">
-                    <a href="assets/docs/WilliamEllingsworthCV.pdf" class="btn primary" download>Ladda ner CV</a>
-                    <a href="#projects" class="btn secondary">Se projekt</a>
+                    <a href="assets/docs/WilliamEllingsworthCV.pdf" class="btn primary" download>Download Resume.pdf</a>
+                    <a href="#projects" class="btn secondary">View Architecture →</a>
                 </div>
             </div>
         </div>
     </header>
 
-    <section id="skills" class="bg-light">
+    <section id="skills" class="bg-light border-y">
         <div class="container">
-            <h3 class="section-title">Tekniska Färdigheter</h3>
+            <h3 class="section-title">Technical Expertise</h3>
             <div class="skills-grid">
                 <div class="skill-card">
-                    <h4>Backend</h4>
-                    <p>.NET (C#), Java, Node.js, REST API</p>
+                    <div class="card-header">
+                        <span class="icon">⚙️</span>
+                        <h4>Backend & Core</h4>
+                    </div>
+                    <p>.NET (C#), EF Core, LINQ, REST APIs, Clean Architecture, MediatR</p>
                 </div>
                 <div class="skill-card">
-                    <h4>Cloud & DevOps</h4>
-                    <p>AWS, Docker, Kubernetes, CI/CD</p>
+                    <div class="card-header">
+                        <span class="icon">☁️</span>
+                        <h4>Cloud & DevOps</h4>
+                    </div>
+                    <p>AWS, Docker, Kubernetes, CI/CD Pipelines, GitHub Actions</p>
                 </div>
                 <div class="skill-card">
-                    <h4>Databaser</h4>
-                    <p>SQL Server, PostgreSQL, MongoDB</p>
+                    <div class="card-header">
+                        <span class="icon">💾</span>
+                        <h4>Data & Persistence</h4>
+                    </div>
+                    <p>SQL Server, PostgreSQL, MongoDB, Redis</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="roadmap">
+        <div class="container">
+            <h3 class="section-title">2026 Roadmap</h3>
+            <div class="roadmap-grid">
+                <div class="roadmap-item active">
+                    <h5>Current Focus</h5>
+                    <p>Implementing RAG (Retrieval-Augmented Generation) patterns and LLM integrations using Semantic Kernel in .NET.</p>
+                </div>
+                <div class="roadmap-item">
+                    <h5>Up Next</h5>
+                    <p>Preparing for AWS Certified Developer Associate & deep-diving into Event-Driven Microservices.</p>
                 </div>
             </div>
         </div>
@@ -60,27 +86,47 @@
 
     <section id="projects">
         <div class="container">
-            <h3 class="section-title">Utvalda Projekt</h3>
-            <div class="project-card">
-                <div class="project-info">
-                    <h4>TournamentsApi</h4>
-                    <p class="project-tags">C# | ASP.NET Core | EF Core | SQL Server</p>
-                    <p>Ett robust Web API för hantering av sportturneringar byggt med Clean Architecture och asynkron programmering.</p>
-                    <a href="https://github.com/williamellings/TournamentsApi" class="project-link" target="_blank">Visa på GitHub →</a>
+            <h3 class="section-title">Featured Projects</h3>
+            <div class="project-grid">
+
+                <div class="project-card">
+                    <div class="project-info">
+                        <div class="project-meta">
+                            <h4>TournamentsApi</h4>
+                            <span class="badge">Backend</span>
+                        </div>
+                        <p class="tech-stack">C# | ASP.NET Core | EF Core | SQL Server</p>
+                        <p>A robust Web API designed for tournament management. Implements <strong>Repository Pattern</strong> and asynchronous logic to ensure high availability and performance.</p>
+                        <div class="project-links">
+                            <a href="https://github.com/williamellings/TournamentsApi" class="project-link" target="_blank">Repository <span>↗</span></a>
+                        </div>
+                    </div>
                 </div>
+
+                <div class="project-card placeholder">
+                    <div class="project-info">
+                        <h4>AI Data Orchestrator</h4>
+                        <p class="status-tag">Development in progress</p>
+                        <p>Exploring async data processing pipelines with AWS Lambda and OpenAI integrations.</p>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
 
     <footer id="contact">
         <div class="container text-center">
-            <h3>Låt oss koppla upp!</h3>
-            <p>0734158309 | wille.ellings@hotmail.com</p>
+            <h3>System Status: Available for Hire</h3>
+            <p>Let's connect and build something stable.</p>
+            <div class="contact-methods">
+                <p> wille.ellings@hotmail.com</p>
+            </div>
             <div class="social-links">
                 <a href="https://github.com/williamellings" target="_blank">GitHub</a>
                 <a href="https://www.linkedin.com/in/william-ellingsworth-1abb59380/" target="_blank">LinkedIn</a>
             </div>
-            <p class="copyright">&copy; 2026 William Ellingsworth</p>
+            <p class="copyright">&copy; 2026 William Ellingsworth | Engineered for Performance</p>
         </div>
     </footer>
 
