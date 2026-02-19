@@ -145,11 +145,9 @@ h2 {
     flex-wrap: wrap; 
 }
 
-.btn.link-btn {
-    color: var(--dark);
-    text-decoration: underline;
-    text-underline-offset: 4px;
-    padding: 0.8rem 1rem;
+.btn.link-btn:hover {
+    color: var(--primary);
+    transform: translateX(4px);
 }
 
 body.terminal-mode .btn.link-btn {
@@ -403,10 +401,9 @@ body.terminal-mode {
         border-color: var(--terminal-green) !important;
     }
 
-        body.terminal-mode .btn:hover {
-            background: var(--terminal-green) !important;
-            color: #000 !important;
-        }
+    body.terminal-mode .btn.link-btn:hover {
+        color: var(--terminal-green) !important;
+    }
 
 @media (max-width: 768px) {
     h2 {
