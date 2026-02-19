@@ -28,8 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }, observerOptions);
 
-    // Lägg till en enkel animation på korten
-    document.querySelectorAll('.skill-card, .project-card').forEach(el => {
+    document.querySelectorAll('.skill-card, .project-card, .roadmap-item').forEach(el => {
         el.style.opacity = "0";
         el.style.transform = "translateY(30px)";
         el.style.transition = "all 0.8s ease-out";
@@ -37,7 +36,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-// Callback för observer för att faktiskt visa elementen
 const style = document.createElement('style');
 style.innerHTML = `
     .reveal-visible {
@@ -46,4 +44,32 @@ style.innerHTML = `
     }
 `;
 document.head.appendChild(style);
+
+function copyEmail() {
+    const email = document.getElementById('email-text').innerText;
+    
+    if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(email).then(() => showToast());
+    } else {
+        const textArea = document.createElement("textarea");
+        textArea.value = email;
+        textArea.style.position = "fixed"; 
+        document.body.appendChild(textArea);
+        textArea.focus();
+        textArea.select();
+        try {
+            document.execCommand('copy');
+            showToast();
+        } catch (err) {
+            console.error('Kunde inte kopiera:', err);
+        }
+        document.body.removeChild(textArea);
+    }
+}
+
+function showToast() {
+    const toast = document.getElementById('copy-toast');
+    toast.style.display = 'block';
+    setTimeout(() => { toast.style.display = 'none'; }, 2000);
+}
 

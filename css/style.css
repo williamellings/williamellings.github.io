@@ -360,6 +360,75 @@ footer .social-links {
     opacity: 0.4;
 }
 
+body.terminal-mode .project-card *,
+body.terminal-mode .skill-card *,
+body.terminal-mode .roadmap-item * {
+    color: var(--terminal-green) !important;
+}
+
+body.terminal-mode .skill-card,
+body.terminal-mode .project-card,
+body.terminal-mode .roadmap-item {
+    background: #000 !important;
+    box-shadow: none !important;
+}
+
+body.terminal-mode .badge {
+    border-color: var(--terminal-green) !important;
+    background: transparent !important;
+}
+
+body.terminal-mode::before {
+    content: " ";
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.1) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.03), rgba(0, 255, 0, 0.01), rgba(0, 0, 118, 0.03));
+    z-index: 9999;
+    background-size: 100% 3px, 3px 100%;
+    pointer-events: none;
+    opacity: 1;
+}
+
+body.terminal-mode h2, body.terminal-mode h3 {
+    text-shadow: 0 0 8px rgba(74, 222, 128, 0.6) !important;
+}
+
+.copy-email-container {
+    display: inline-flex;
+    align-items: center;
+    background: rgba(255,255,255,0.05);
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    gap: 10px;
+    position: relative;
+}
+
+.copy-btn {
+    background: none;
+    border: none;
+    color: var(--primary);
+    cursor: pointer;
+    padding: 5px;
+    transition: 0.2s;
+}
+
+#copy-toast {
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--accent);
+    color: white;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    display: none;
+}
+
 body.terminal-mode {
     background-color: #0d0d0d !important;
     color: var(--terminal-green) !important;
@@ -395,6 +464,7 @@ body.terminal-mode {
     body.terminal-mode section,
     body.terminal-mode .bg-light,
     body.terminal-mode header,
+    body.terminal-mode footer,
     body.terminal-mode .border-y {
         background-color: #0d0d0d !important;
         background: #0d0d0d !important;
