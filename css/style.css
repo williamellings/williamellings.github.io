@@ -141,6 +141,19 @@ h2 {
 .cta-buttons {
     display: flex;
     gap: 1rem;
+    align-items: center;
+    flex-wrap: wrap; 
+}
+
+.btn.link-btn {
+    color: var(--dark);
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    padding: 0.8rem 1rem;
+}
+
+body.terminal-mode .btn.link-btn {
+    color: var(--terminal-green) !important;
 }
 
 .btn {
