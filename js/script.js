@@ -2,19 +2,78 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // --- TERMINAL TOGGLE ---
     const toggleBtn = document.getElementById('terminal-toggle');
-    const body = document.body;
+    const terminalOverlay = document.getElementById('interactive-terminal');
+    const cmdInput = document.getElementById('cmd-input');
+    const terminalOutput = document.getElementById('terminal-output');
 
+    // Open terminal when button is clicked
     if (toggleBtn) {
         toggleBtn.addEventListener('click', () => {
-            body.classList.toggle('terminal-mode');
-            
-            if (body.classList.contains('terminal-mode')) {
-                toggleBtn.innerText = '_Exit_Terminal';
-                console.log("> System scan complete. Root access granted.");
-            } else {
-                toggleBtn.innerText = '_Run_Terminal';
+            terminalOverlay.classList.remove('hidden');
+            cmdInput.focus();
+            document.body.style.overflow = 'hidden'; // Stop background scrolling
+        });
+    }
+
+    // Keep focus on the input if user clicks anywhere in the terminal
+    if (terminalOverlay) {
+        terminalOverlay.addEventListener('click', () => {
+            cmdInput.focus();
+        });
+    }
+    // Define the backend commands
+    const commands = {
+        'help': 'Available commands: about, skills, projects, contact, clear, exit',
+        'about': 'William Ellingsworth.\nBackend-First Fullstack Engineer.\nFocused on Clean Architecture, .NET, and efficient data flows.',
+        'skills': 'Backend: .NET (C#), EF Core, REST APIs\nCloud: AWS, Docker, Kubernetes\nDatabase: SQL Server, PostgreSQL, MongoDB',
+        'projects': '1. TournamentsApi (C# / ASP.NET Core)\n2. AI Data Orchestrator (AWS Lambda)',
+        'contact': 'Email: wille.ellings@hotmail.com\nLinkedIn: linkedin.com/in/william-ellingsworth-1abb59380\nGitHub: github.com/williamellings',
+
+        // --- EASTER EGGS ---
+        'whoami': 'You are a curious tech lead, recruiter, or fellow developer inspecting my code. Welcome!',
+        'ping': 'Pong! Latency: 1ms. Backend optimization successful.',
+        'make coffee': 'Error 418: I am a teapot. (But I do run on 100% caffeine)',
+        'sudo rm -rf /': 'Permission denied. Nice try, but this system is secured by Clean Architecture.'
+    };
+
+    // Listen for the "Enter" key
+    if (cmdInput) {
+        cmdInput.addEventListener('keydown', function (e) {
+            if (e.key === 'Enter') {
+                const inputVal = this.value.trim().toLowerCase();
+                this.value = ''; // clear input field
+
+                // 1. Echo the command to the screen
+                printToTerminal(`C:\\William\\Portfolio> ${inputVal}`);
+
+                // 2. Process the command
+                if (inputVal === 'clear') {
+                    terminalOutput.innerHTML = '';
+                } else if (inputVal === 'exit') {
+                    terminalOverlay.classList.add('hidden');
+                    document.body.style.overflow = 'auto'; // Restore background scrolling
+                } else if (commands[inputVal]) {
+                    printToTerminal(commands[inputVal]);
+                } else if (inputVal !== '') {
+                    printToTerminal(`'${inputVal}' is not recognized as an internal or external command.`);
+                }
+
+                // 3. Auto-scroll to the bottom
+                terminalOverlay.scrollTop = terminalOverlay.scrollHeight;
             }
         });
+    }
+
+    function printToTerminal(text) {
+        const lines = text.split('\n'); // Split by line breaks so it formats correctly
+        lines.forEach(line => {
+            const p = document.createElement('p');
+            // Add a non-breaking space if the line is empty to keep spacing
+            p.textContent = line === '' ? '\u00A0' : line;
+            terminalOutput.appendChild(p);
+        });
+        // Add an extra blank line after output for readability
+        terminalOutput.appendChild(document.createElement('br'));
     }
 
     // --- SCROLL REVEAL ANIMATION ---
